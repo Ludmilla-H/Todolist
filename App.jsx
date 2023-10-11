@@ -1,14 +1,14 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import Todo from './src/Todo'
-import { PaperProvider } from 'react-native-paper'
+import Leboncoin from './tuto/leBonCoin/Leboncoin'
+import Tuto from './tuto/Tuto'
 
 const App = () => {
 
 
   return (
 
-      <Todo />
+      <Leboncoin/>
   )
 }
 
