@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "purple",
+        backgroundColor: "#9f53ec",
     },
 
     blocDavis:{
@@ -108,12 +108,10 @@ export default StyleSheet.create({
         borderRadius: 20,
     },
 
-    forYouflatlistName:{
-        height: 110,
-        width: 90,
+    forYouflatlistContainer: {
         borderRadius: 20,
-        marginLeft: 10,
-        fontSize: 13,
+        height: 160,
+        width: 160,
 
     },
 
@@ -124,11 +122,44 @@ export default StyleSheet.create({
         borderRadius: 20,
     },
 
-    forYouflatlistContainer: {
-        flexDirection: "row", 
+
+    forYouflatlistName:{
         borderRadius: 20,
-        marginVertical: 10,
-        marginHorizontal: 15,
+        marginLeft: 10,
+        fontSize: 13,
+    },
+
+    forYouflatlistContainer1 :{
+        flexDirection: "row", 
+        padding: 10,
 
     },
+    forYouflatlistContainer2:{
+        backgroundColor: "white",
+        height: 110,
+        width: "100%",
+        borderRadius: 20,
+        elevation: 10,
+        shadowColor: "grey",
+    },
+
+    forYouflatlistContainer3: {
+        fontSize: 18,
+        margin: 10,
+        fontWeight: "600",
+    },
+
+    forYouflatlistContainer4: {
+        justifyContent: "center",
+        alignItems: "center",
+
+    },
+
+    forYouflatlistText: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "black",
+    },
+
+
 })

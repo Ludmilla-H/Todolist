@@ -7,10 +7,25 @@ const ItemForYou = ({ user }) => {
         <View style={{ ...topCoursesStyles.forYouflatlist, backgroundColor: user.color }}>
 
             <View style={topCoursesStyles.forYouflatlistContainer}>
-                <Text style={topCoursesStyles.forYouflatlistLogo}></Text>
-                <Text style={topCoursesStyles.forYouflatlistName} >{user.name}</Text>
-            </View>
-            <View style={topCoursesStyles.forYouflatlistContainer1}>
+
+                <View style={topCoursesStyles.forYouflatlistContainer1}>
+                    <Text style={topCoursesStyles.forYouflatlistLogo}></Text>
+                    <Text style={topCoursesStyles.forYouflatlistName} >{user.name}</Text>
+                </View>
+
+                <View style={topCoursesStyles.forYouflatlistContainer2}>
+                    <View >
+                        <Text style={topCoursesStyles.forYouflatlistContainer3}>{user?.rate}</Text>
+                        <View style={topCoursesStyles.forYouflatlistContainer4}>
+                            <Text style={topCoursesStyles.forYouflatlistText}>{user?.poste}</Text>
+                        </View>
+
+                    </View>
+
+
+
+
+                </View>
 
             </View>
             <View>
