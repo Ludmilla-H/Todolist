@@ -1,8 +1,10 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import topCoursesStyles from './topCoursesStyles'
 import ItemCourses from './ItemCourses'
 import ItemForYou from './ItemForYou'
+import { Button } from 'react-native-paper'
+import auth from '@react-native-firebase/auth';
 
 export const users = [
     {
@@ -48,18 +50,32 @@ export const users = [
 ]
 
 const TopCourses = () => {
+
+
+    const deconexion = () => {
+
+        auth().signOut() ;
+
+    }
+
     return (
         <View style={topCoursesStyles.container}>
 
+
             <View style={topCoursesStyles.blocDavis}>
+
                 <View >
                     <View style={topCoursesStyles.hiDavis1}></View>
 
                 </View>
                 <View>
+                <Button onPress={deconexion}>Déconexion</Button>
+
                     <Text style={topCoursesStyles.hiDavis}>Hi, Davis</Text>
 
                     <Text style={topCoursesStyles.hiDavis3}>learning is easier</Text>
+
+
                 </View>
 
             </View>
@@ -82,7 +98,7 @@ const TopCourses = () => {
                 <View>
                     <Text style={topCoursesStyles.forYou}>For You </Text>
                 </View>
-                <View>
+                <ScrollView>
                     <FlatList
                         data={users}
                         renderItem={({ item }) => <ItemForYou user={item} />}
@@ -91,7 +107,7 @@ const TopCourses = () => {
 
 
                     />
-                </View>
+                </ScrollView>
 
 
             </View>
