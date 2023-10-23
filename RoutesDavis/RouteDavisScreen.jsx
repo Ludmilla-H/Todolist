@@ -24,8 +24,6 @@ const RouteDavisScreen = () => {
     const onUserStateChanged = (user) => {
 
         // setUser(user);
-
-        
         //si il n'y a pas d'utl set user si il y en a un user
 
         if (!user) {

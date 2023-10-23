@@ -25,15 +25,7 @@ const SignInScreen = ({navigation}) => {
             
         } catch (error) {
             console.log("error" , error)
-
-            
         }
-
- 
-
-
-
-
     }
 
 

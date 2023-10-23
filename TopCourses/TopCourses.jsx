@@ -5,6 +5,7 @@ import ItemCourses from './ItemCourses'
 import ItemForYou from './ItemForYou'
 import { Button } from 'react-native-paper'
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native'
 
 export const users = [
     {
@@ -51,11 +52,12 @@ export const users = [
 
 const TopCourses = () => {
 
+    const navigation = useNavigation() ;
 
-    const deconexion = () => {
 
-        auth().signOut() ;
 
+    const profileScreen = () => {
+        navigation.navigate("Profile")
     }
 
     return (
@@ -65,11 +67,10 @@ const TopCourses = () => {
             <View style={topCoursesStyles.blocDavis}>
 
                 <View >
-                    <View style={topCoursesStyles.hiDavis1}></View>
+                    <Button onPress={profileScreen} style={topCoursesStyles.hiDavis1}></Button>
 
                 </View>
                 <View>
-                <Button onPress={deconexion}>Déconexion</Button>
 
                     <Text style={topCoursesStyles.hiDavis}>Hi, Davis</Text>
 
@@ -104,7 +105,6 @@ const TopCourses = () => {
                         renderItem={({ item }) => <ItemForYou user={item} />}
                         keyExtractor={item => item.id}
                         numColumns={2}
-
 
                     />
                 </View>
