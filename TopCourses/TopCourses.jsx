@@ -98,7 +98,7 @@ const TopCourses = () => {
                 <View>
                     <Text style={topCoursesStyles.forYou}>For You </Text>
                 </View>
-                <ScrollView>
+                <View>
                     <FlatList
                         data={users}
                         renderItem={({ item }) => <ItemForYou user={item} />}
@@ -107,7 +107,7 @@ const TopCourses = () => {
 
 
                     />
-                </ScrollView>
+                </View>
 
 
             </View>
