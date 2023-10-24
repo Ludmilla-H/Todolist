@@ -45,17 +45,20 @@ const ProfileScreen = () => {
 
   return (
     <View>
+      
       <TextInput
         placeholder="nom"
         value={nom}
         onChangeText={setNom}
       />
+
       <TextInput
         placeholder="Prenom"
         value={prenom}
         onChangeText={setPrenom}
         secureTextEntry
       />
+
       <TextInput
         placeholder="Email"
         value={email}
