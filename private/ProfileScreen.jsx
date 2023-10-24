@@ -25,8 +25,10 @@ const ProfileScreen = () => {
   const read = async () => { 
     const snapUser = await firestore().collection('user').doc(userId).get() ;
 
-    console.log("snapUser" , snapUser)
+    console.log("snapUser" , snapUser.data())
+    setEmail(snapUser.data().email)
   }
+
 
 
   const deconexion = () => {
@@ -58,7 +60,6 @@ const ProfileScreen = () => {
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
-        secureTextEntry
       />
 
       <Button onPress={modifier} > Valider les modifications</Button>

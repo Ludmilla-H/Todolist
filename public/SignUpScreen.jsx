@@ -19,9 +19,10 @@ const SignUpScreen = ({ navigation }) => {
 
             if (email != "" && password != "") {
                 console.log("pas vide")
-                const user = await auth().createUserWithEmailAndPassword( email , password )
+                const userAuth = await auth().createUserWithEmailAndPassword( email , password )
+                const uid = userAuth.user.uid
                 //enregistrement de l'utilisateur en base de donnée à l'aide de son uid (user:id)
-                await firestore().collection("user").doc(user.uid).set({email:email})
+                await firestore().collection("user").doc(uid).set({email:email})
             }
 
             console.log("email", email, "password", password)
