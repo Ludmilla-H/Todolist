@@ -4,6 +4,7 @@ import { Button, TextInput } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
+import Icon from 'react-native-vector-icons/dist/EvilIcons'
 
 
 
@@ -17,9 +18,15 @@ const ProfileScreen = () => {
   const [email, setEmail] = useState('');
   const [user, setUser] = useState();
 
+
+  const addImage = () => {
+
+  }
+
   const modifier = () => {
 
-
+    console.log("email" , email, "prenom", prenom, "nom", nom)
+    firestore().collection("user").doc(userId).update({nom , prenom}) ;
   }
 
   const read = async () => { 
@@ -27,16 +34,15 @@ const ProfileScreen = () => {
 
     console.log("snapUser" , snapUser.data())
     setEmail(snapUser.data().email)
+    setNom(snapUser.data().nom)
+    setPrenom(snapUser.data().prenom)
   }
-
-
 
   const deconexion = () => {
 
     auth().signOut();
 
   }
-
 
   useEffect(() => {
     read()
@@ -56,7 +62,6 @@ const ProfileScreen = () => {
         placeholder="Prenom"
         value={prenom}
         onChangeText={setPrenom}
-        secureTextEntry
       />
 
       <TextInput
@@ -65,6 +70,7 @@ const ProfileScreen = () => {
         onChangeText={setEmail}
       />
 
+      <Button onPress={addImage} > + </Button>
       <Button onPress={modifier} > Valider les modifications</Button>
       <Button onPress={deconexion}>Déconexion</Button>
 
