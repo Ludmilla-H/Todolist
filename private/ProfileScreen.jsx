@@ -23,7 +23,10 @@ const ProfileScreen = () => {
   // const [user, setUser] = useState();
   const [status, setStatus] = useState();
 
-
+  const callBackCamera = (response) => {
+    console.log(response)
+  }
+  
   const chooseFile = async () => {
     const options = {
       title: 'Select Image',
@@ -32,14 +35,10 @@ const ProfileScreen = () => {
           path: 'images', // store camera images under Pictures/images for android and Documents/images for iOS
       },
   }
-  const result = await launchCamera(options , callBackCamera())
+  const result = await launchCamera(options , callBackCamera)
   console.log("result" , result)
-
 };
 
-const callBackCamera = (response) => {
-  console.log(response)
-}
 
 // ImagePicker.showImagePicker(options, response => {
 //   if (response.didCancel) {
